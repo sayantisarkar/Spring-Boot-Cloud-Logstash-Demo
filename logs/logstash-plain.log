@@ -1,0 +1,19 @@
+[2022-04-18T22:00:06,025][WARN ][logstash.config.source.multilocal] Ignoring the 'pipelines.yml' file because modules or command line options are specified
+[2022-04-18T22:00:06,153][INFO ][logstash.runner          ] Starting Logstash {"logstash.version"=>"6.8.1"}
+[2022-04-18T22:00:40,195][INFO ][logstash.pipeline        ] Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>8, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50}
+[2022-04-18T22:00:41,899][INFO ][logstash.outputs.elasticsearch] Elasticsearch pool URLs updated {:changes=>{:removed=>[], :added=>[http://localhost:9200/]}}
+[2022-04-18T22:00:42,768][WARN ][logstash.outputs.elasticsearch] Restored connection to ES instance {:url=>"http://localhost:9200/"}
+[2022-04-18T22:00:42,949][INFO ][logstash.outputs.elasticsearch] ES Output version determined {:es_version=>6}
+[2022-04-18T22:00:42,961][WARN ][logstash.outputs.elasticsearch] Detected a 6.x and above cluster: the `type` event field won't be used to determine the document _type {:es_version=>6}
+[2022-04-18T22:00:43,033][INFO ][logstash.outputs.elasticsearch] New Elasticsearch output {:class=>"LogStash::Outputs::ElasticSearch", :hosts=>["//localhost:9200"]}
+[2022-04-18T22:00:43,077][INFO ][logstash.outputs.elasticsearch] Using default mapping template
+[2022-04-18T22:00:43,193][INFO ][logstash.outputs.elasticsearch] Attempting to install template {:manage_template=>{"template"=>"logstash-*", "version"=>60001, "settings"=>{"index.refresh_interval"=>"5s"}, "mappings"=>{"_default_"=>{"dynamic_templates"=>[{"message_field"=>{"path_match"=>"message", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false}}}, {"string_fields"=>{"match"=>"*", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false, "fields"=>{"keyword"=>{"type"=>"keyword", "ignore_above"=>256}}}}}], "properties"=>{"@timestamp"=>{"type"=>"date"}, "@version"=>{"type"=>"keyword"}, "geoip"=>{"dynamic"=>true, "properties"=>{"ip"=>{"type"=>"ip"}, "location"=>{"type"=>"geo_point"}, "latitude"=>{"type"=>"half_float"}, "longitude"=>{"type"=>"half_float"}}}}}}}}
+[2022-04-18T22:00:46,146][INFO ][logstash.inputs.file     ] No sincedb_path set, generating one based on the "path" setting {:sincedb_path=>"C:/training/springcloud/day2/module6-elk/software/logstash-6.8.1/logstash-6.8.1/data/plugins/inputs/file/.sincedb_850e860f851c1d5231f7299532635c98", :path=>["C:/sc/consumer/app.log"]}
+[2022-04-18T22:00:46,281][INFO ][logstash.pipeline        ] Pipeline started successfully {:pipeline_id=>"main", :thread=>"#<Thread:0x209d7c44 run>"}
+[2022-04-18T22:00:46,474][INFO ][logstash.agent           ] Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}
+[2022-04-18T22:00:46,480][INFO ][filewatch.observingtail  ] START, creating Discoverer, Watch with file and sincedb collections
+[2022-04-18T22:00:48,070][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
+[2022-04-18T22:09:51,702][WARN ][logstash.runner          ] SIGINT received. Shutting down.
+[2022-04-18T22:09:51,962][FATAL][logstash.runner          ] SIGINT received. Terminating immediately..
+[2022-04-18T22:09:52,198][INFO ][filewatch.observingtail  ] QUIT - closing all files and shutting down.
+[2022-04-18T22:09:52,238][ERROR][org.logstash.Logstash    ] org.jruby.exceptions.ThreadKill
